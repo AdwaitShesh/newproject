@@ -1,0 +1,68 @@
+//GET http://localhost:4000/api/song/list
+
+//For adding into songs into the database
+POST http://localhost:4000/api/song/add
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="name"
+
+testing name 2
+--boundary
+Content-Disposition: form-data; name="desc"
+
+testing description 2
+--boundary
+Content-Disposition: form-data; name="album"
+
+testing album 2
+--boundary
+Content-Disposition: form-data; name="audio"; filename="song1.mp3"
+Content-Type: audio/mpeg
+
+< D:\SPIT\SPITTE\CITL\project\musicplayer\src\assets\song1.mp3
+--boundary
+Content-Disposition: form-data; name="image"; filename="img7.jpg"
+Content-Type: image/jpeg
+
+< D:\SPIT\SPITTE\CITL\project\musicplayer\src\assets\img7.jpg
+--boundary--
+
+//for deleting the song in the datyabase
+# POST http://localhost:4000/api/song/remove
+# Content-Type: application/json
+
+# {
+#   "id": "6725daf1fbd78481fd6ba45e"
+# }
+
+# POST http://localhost:4000/api/album/add
+# Content-Type: multipart/form-data; boundary=boundary
+
+# --boundary
+# Content-Disposition: form-data; name="name"
+
+# testing album name
+# --boundary
+# Content-Disposition: form-data; name="desc"
+
+# testing description
+# --boundary
+# Content-Disposition: form-data; name="bgColour"
+
+# ffffff
+# --boundary
+# Content-Disposition: form-data; name="image"; filename="img13.jpg"
+# Content-Type: image/jpeg
+
+# < D:\SPIT\SPITTE\CITL\project\musicplayer\src\assets\img7.jpg
+# --boundary--
+
+# GET http://localhost:4000/api/album/list
+
+# POST http://localhost:4000/api/album/remove
+# Content-Type: application/json
+
+# {
+#   "id": "6726a15363bfb5f667f9cb3e"
+# }
