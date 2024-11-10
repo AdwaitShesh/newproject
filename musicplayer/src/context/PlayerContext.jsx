@@ -8,7 +8,7 @@ const PlayerContextProvider = (props)=>{
     const seekBg = useRef();
     const seekBar = useRef();
 
-    const url = "https://musicplayer-backend-xdob.onrender.com";
+    const url = 'https://musicplayer-backend-xdob.onrender.com';
 
     const [songsData,setSongsData] = useState([])
     const [albumsData, setAlbumsData] = useState([])
