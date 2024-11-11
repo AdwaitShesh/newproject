@@ -1,0 +1,33 @@
+services:
+  musicplayer:
+    build: musicplayer
+    ports:
+      - "5173:5173"
+    networks:
+      - mern
+
+  musicplayer_backend:
+    build: musicplayer_backend
+    ports:
+      - "4000:4000"
+    networks:
+      - mern
+    depends_on:
+      - mongo
+
+  musicplayer_admin:
+    build: musicplayer_Admin
+    ports:
+      - "3001:3001"
+    networks:
+      - mern
+
+  mongo:
+    image: mongo:latest
+    networks:
+      - mern
+
+  
+networks:
+  mern:
+    driver: bridge
